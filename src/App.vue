@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-  <app-header></app-header>
-  </header>
-    <router-view></router-view>
+
+  <router-view></router-view>
+
   </div>
 </template>
 
 <script>
-import header from "./components/header.vue"
+
+import footer from "./components/footer.vue"
 
 export default {
   name: 'app',
-  components: {
-    "app-header": header,
+  components: { 
+    "app-footer": footer
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Source+Sans+Pro');
+
+
+a, a:hover {
+	text-decoration: none;
+	color: inherit;
 }
 </style>

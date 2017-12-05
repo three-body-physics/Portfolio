@@ -1,37 +1,52 @@
 <template>
-  <div>
+<div class="container">
+
+<div class="row"  id="banner">
+
+<!-- <transition name="profile-ani" appear>
+  <div class="col-xs-12 col-md-6" id="profileImg" v-if="home">
+    <img src="static/boy.svg">
+  </div>
+</transition> -->
+
+<transition name="info-ani" appear>
+  <div class="col-xs-12 col-md-6 col-md-offset-3" id="info" v-if="home">
+      <div id="profileImg">
+      <img src="static/aboutme.jpg">
+      </div>   
+      <h1>Hello, my name is Myint.</h1> <p>I'm a web developer based in Birmingham, West Midlands. I'm a very passionate developer with a demonstratable capacity to learn
+      new technologies and concepts on my own initiative as I am entirely self taught. I work on both <strong>Frontend and Backend</strong> with popular libraries and frameworks such as VueJS, Angular, Bootstrap as well as Node, Express, Mongo and Socket.io backend.</p>
+   
+    <div class="btn btn-default">Git Hub</div>
+    <div class="btn btn-default" @click="goToPortfolio">Portfolio</div>
+ 
+  </div>
+</transition>      
+</div>
+
+<transition name="frame-ani" appear>
+
+  <div class="row" id="frameworks" v-if="home">
+    <div class="col-xs-12">
+
+    <h3><span>Libraries</span> and <span>Frameworks</span></h3>
 
 
-  <div class="ui centered container">
-    <img src="static/boy.svg" class="ui medium centered image" id="profile">
-    <h2 class="ui header">About me</h2>
-    <div class="ui divider">
-    </div>
-    <div class="ui text container">
-      <p>Hello, my name is <strong>Myint</strong>. I'm a web developer based in Birmingham, West Midlands. I'm a very passionate developer with a demonstratable capacity to learn
-      new technologies and concepts on my own initiative as I am entirely self taught. I work on both <strong>Frontend and Backend</strong> with popular libraries and frameworks such as VueJS,
-    Angular as well as NodeJs, Express, MongoDB, Socket.io and Firebase.</p>
-    <h3 class="ui header">Languages, Libraries and Frameworks</h3>
-    <div class="ui divider">
-    </div>
-    <div class="ui mini images">
-      <img src="static/html5.png" class="ui image">
-      <img src="static/css3.png" class="ui image">
-      <img src="static/js5.png" class="ui image">
-      <img src="static/jquery.png" class="ui image">
-      <img src="static/Vue.png" class="ui image">
-      <img src="static/semantic.png" class="ui image">
-      <img src="static/node.png" class="ui image">
-      <img src="static/mongodb.png" class="ui image">
-      <img src="static/socketio.png" class="ui image">
-      <img src="static/firebase.png" class="ui image">
-    </div>
-    <div class="ui divider">
-    </div>
+      <img src="static/html5.png">
+      <img src="static/css3.png">
+      <img src="static/js5.png">
+      <img src="static/jquery.png">
+      <img src="static/Vue.png">
+      <img src="static/angular.png">
+      <img src="static/bootstrap.png">
+      <img src="static/node.png">
+      <img src="static/mongodb.png">
+      <img src="static/socketio.png">
+     
+
     </div>
   </div>
-
-  <app-projects></app-projects>
+</transition> 
 </div>
 </template>
 
@@ -39,13 +54,22 @@
 import projects from "./projects.vue"
 
 export default {
-  name: 'hello',
+  
   components: {
     "app-projects": projects
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      home: true
+    }
+  },
+
+  methods: {
+    goToPortfolio() {
+      this.home = false;
+      setTimeout(() => {
+        this.$router.push("/Portfolio")
+      }, 600)
     }
   }
 }
@@ -53,28 +77,103 @@ export default {
 
 <style scoped>
 
-#profile {
+/*#profile {
   border: 1px solid grey;
   border-radius: 100%;
 }
+*/
 
-.ui.mini.images .ui.image {
+@import url('https://fonts.googleapis.com/css?family=Lato|Ubuntu:700');
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Crimson Text', serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+#profileImg {
+  margin-top: 1em;
+  
+}
+
+#profileImg img {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 1em;
+  border: 1px solid white;
+  border-radius: 50%;
+
+}
+
+#info { 
+  line-height: 2em;
+  text-align: center;
+
+}
+
+#frameworks {
+
+   text-align: center; 
+
+}
+
+#frameworks h3 {
+  margin-bottom: 1em;
+}
+
+
+#frameworks img {
+  max-width: 4em;
+  height: auto;
+  margin: 0.5em;
+  filter: grayscale(1);
   cursor: pointer;
 }
 
-.ui.mini.images .ui.image:hover {
-  transform: scale(1.5, 1.5);
+#frameworks img:hover {
+  filter: grayscale(0);
+  transform: scale(1.1, 1.1);
 }
 
-i {
-animation: bounce 3s infinite;
+.profile-ani-enter-active, .profile-ani-leave-active {
+  transition: all 1s;
 }
 
-@@keyframes bounce {
+.profile-ani-enter, .profile-ani-leave-to {
+  opacity: 0;
+  transform: translateY(50px);
+}
 
-  from {transform: translateY(5px);}
-  to {transform: translateY(10px);}
+.info-ani-enter-active, .info-ani-leave-active {
+  transition: all 1s;
+}
 
+.info-ani-enter {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.info-ani-leave-to {
+  opacity: 0;
+}
+
+
+
+.frame-ani-enter-active, .frame-ani-leave-active {
+  transition: all 2s;
+}
+
+.frame-ani-enter, .frame-ani-leave-to {
+  opacity: 0;
 }
 
 </style>

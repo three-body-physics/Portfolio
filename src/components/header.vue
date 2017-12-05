@@ -1,32 +1,47 @@
 <template>
-<div>
+  <div>  
 
-
-    <div class="ui fixed compact menu computer only grid" id="nav">
-          <div class="icon">
-            <a href="https://github.com/three-body-physics" target="_blank"><img src="static/github.svg" class="ui mini image"></a>
-          </div>
-          <div class="icon" id="resume">
-            <a href="https://github.com/three-body-physics" target="_blank"><img src="static/resume.png" class="ui mini image"></a>
-          </div>
+    <div class="container-fluid" id="nav">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="btn btn-primary" @click="previous()">previous</div>
+          <div class="btn btn-primary" @click="next()">next</div>
+        </div>
+      </div>
     </div>
 
-
-</div>
-
+  </div>
 </template>
 
+
 <script>
+
+
+
 export default {
+
+methods: {
+  next() {
+    this.$store.commit('nextProj');
+  },
+
+  previous() {
+    this.$store.commit('prevProj');
+  }
+}
+
 }
 </script>
 
 <style scoped>
 
+.container-fluid {
+  height: 10vh;
+  background-color: #EDEFEE;
+}
+
 #nav {
-  background: none;
-  border: none;
-  box-shadow: none;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -36,12 +51,12 @@ export default {
   transform: scale(1.3, 1.3);
 }
 
-.icon {
+/*.icon {
   margin-top: 1em;
   margin-right: 1.5em;
   opacity: 0.4;
 }
-
+*/
 .icon:hover {
   opacity: 0.8;
   transition: all 1s;
