@@ -56,7 +56,7 @@ export const info = [
 
 	{ 	name: "Portfolio",
 		des: "A personal portfolio written in VueJS. It makes use of VueX state management to keep data seperate and scalable. As a SPA, it provides fast, clean and smooth user experience.",
-		img: "static/portfolio.png",
+		img: "static/Dportfolio.png",
 		live: "https://mmpaingportfolio.herokuapp.com/",
 		github: "https://github.com/three-body-physics/Portfolio",
 		tools: ["static/Vue.png", "static/bootstrap.png"]
