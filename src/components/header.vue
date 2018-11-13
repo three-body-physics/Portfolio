@@ -1,11 +1,11 @@
 <template>
   <div>  
 
-    <div class="container-fluid" id="nav">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="btn btn-primary" @click="previous()">previous</div>
-          <div class="btn btn-primary" @click="next()">next</div>
+    <div class="container-fluid">
+      <div class="row" id="nav">
+        <div class="col-xs-12" >
+          <div @click="previous()"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></div>
+          <div @click="next()"><i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i></div>
         </div>
       </div>
     </div>
@@ -38,13 +38,21 @@ methods: {
 .container-fluid {
   height: 10vh;
   background-color: #EDEFEE;
+    display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.col-xs-12 div {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 1em 0 1em;
 }
 
 #nav {
 
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+padding: 2em;
+
 }
 
 #resume {

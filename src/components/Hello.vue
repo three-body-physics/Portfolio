@@ -14,10 +14,10 @@
       <div id="profileImg">
       <img src="static/aboutme.jpg">
       </div>   
-      <h1>Hello, my name is Myint.</h1> <p>I'm a web developer based in Birmingham, West Midlands. I'm a very passionate developer with a demonstratable capacity to learn
+      <h1>Hello, my name is Myint.</h1> <p>I'm a web developer based in Truro, Cornwall. I'm a very passionate developer with a demonstratable capacity to learn
       new technologies and concepts on my own initiative as I am entirely self taught. I work on both <strong>Frontend and Backend</strong> with popular libraries and frameworks such as VueJS, Angular, Bootstrap as well as Node, Express, Mongo and Socket.io backend.</p>
    
-    <div class="btn btn-default">Git Hub</div>
+    <div class="btn btn-default"><a target="_blank" href="https://github.com/three-body-physics?tab=repositories">Git Hub</a></div>
     <div class="btn btn-default" @click="goToPortfolio">Portfolio</div>
  
   </div>
@@ -144,14 +144,6 @@ p {
   transform: scale(1.1, 1.1);
 }
 
-.profile-ani-enter-active, .profile-ani-leave-active {
-  transition: all 1s;
-}
-
-.profile-ani-enter, .profile-ani-leave-to {
-  opacity: 0;
-  transform: translateY(50px);
-}
 
 .info-ani-enter-active, .info-ani-leave-active {
   transition: all 1s;
@@ -159,7 +151,7 @@ p {
 
 .info-ani-enter {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateY(-50px);
 }
 
 .info-ani-leave-to {
@@ -168,8 +160,12 @@ p {
 
 
 
-.frame-ani-enter-active, .frame-ani-leave-active {
+.frame-ani-enter-active {
   transition: all 2s;
+}
+
+.frame-ani-leave-active  {
+  transition: all 1s;
 }
 
 .frame-ani-enter, .frame-ani-leave-to {

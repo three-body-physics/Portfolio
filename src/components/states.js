@@ -13,9 +13,9 @@ mutations: {
 
 	nextProj: state => {
 
-		if (state.projectNo < 4) {
+		if (state.projectNo < 5) {
 			state.projectNo++;
-		} else if (state.projectNo = 4) {
+		} else if (state.projectNo = 5) {
 			state.projectNo = 0;
 		}
 	},
@@ -23,8 +23,8 @@ mutations: {
 	prevProj: state => {
 		if (state.projectNo > 0) {
 			state.projectNo--;
-		} else if (state.projectNo = 4) {
-			state.projectNo = 4;
+		} else if (state.projectNo = 5) {
+			state.projectNo = 5;
 		}
 	}
 }
